@@ -1,0 +1,39 @@
+html, 
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 576px){
+    main {
+        width: 100%
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px){
+    main {
+        width: 720px
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px){
+    main {
+        width: 960px
+    }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px){
+    main {
+        width: 1140px
+    }
+}
+
+@media only screen and (min-width: 1201px){
+    main {
+        width: 1320px
+    }
+}
