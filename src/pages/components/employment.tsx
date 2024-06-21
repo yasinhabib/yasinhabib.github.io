@@ -31,7 +31,7 @@ const Employment = () => {
                             id
                             company
                             companyLogo {
-                            publicUrl
+                            url
                             }
                             endYear
                             description {

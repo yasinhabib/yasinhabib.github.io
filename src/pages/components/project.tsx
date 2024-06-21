@@ -30,7 +30,7 @@ const Project = () => {
                             projectDescription
                         }
                         projectPreview {
-                            publicUrl
+                            url
                         }
                     }
                 }

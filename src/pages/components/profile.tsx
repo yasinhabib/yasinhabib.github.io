@@ -53,7 +53,7 @@ const Profile = () => {
                     id
                     fullName
                     profilePicture {
-                        publicUrl
+                        url
                     }
                     shortName
                     title
@@ -68,7 +68,7 @@ const Profile = () => {
                             socialMediaUrl
                             socialMediaName
                             socialMediaIcon {
-                                publicUrl
+                                url
                             }
                         }
                     }
@@ -86,14 +86,14 @@ const Profile = () => {
                 <div style={SocialMediaContainer}>
                     {data.allContentfulSocialMedia.edges.map((value: any) => (
                         <a key={value.node.id} href={value.node.socialMediaUrl} style={SocialMediaLink} target="_blank">
-                            <img src={value.node.socialMediaIcon.publicUrl} style={SocialMediaIcon}/>
+                            <img src={value.node.socialMediaIcon.url} style={SocialMediaIcon}/>
                             <span>{value.node.socialMediaName}</span>
                         </a>    
                     ))}
                 </div>
             </div>
             <div style={ProfilePictureContainerStyle}>
-                <img style={ProfilePictureStyle} src={data.contentfulMyInfo.profilePicture.publicUrl} alt="Profile Picture" />
+                <img style={ProfilePictureStyle} src={data.contentfulMyInfo.profilePicture.url} alt="Profile Picture" />
             </div>
         </div>
     )
