@@ -76,7 +76,6 @@ const Profile = () => {
             }
         `
       );
-      console.log(data.allContentfulSocialMedia.edges)
     return(
         <div style={ProfileContainerStyle}>
             <div style={ProfileContentContainerStyle}>
