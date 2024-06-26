@@ -20,7 +20,7 @@ const Skill = () => {
       );
 
     return(
-        <div className={'skill-container'}>
+        <div className={'skill'}>
             <h1 style={{margin: 0}}>Expertise In</h1>
             <div className={'skill-container'}>
                 {

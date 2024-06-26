@@ -1,7 +1,5 @@
-import { PageProps, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import * as React from "react"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 
 const Project = () => {
     const data = useStaticQuery(
@@ -22,7 +20,6 @@ const Project = () => {
             }
         `
       );
-    console.log(data)
     return(
         <div className={'project-container'}>
             <h1>Project </h1>

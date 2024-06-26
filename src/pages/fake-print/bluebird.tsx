@@ -45,7 +45,6 @@ const IndexPage: React.FC<PageProps> = () => {
           setPrintCharacteristic(characteristic)
           return characteristic
         }catch(error){
-          console.log(error);
           setPrintCharacteristic(undefined)
           return undefined
         }
@@ -73,7 +72,6 @@ const IndexPage: React.FC<PageProps> = () => {
         let result = encoder
             .initialize()
         img.onload = async () => {
-            console.log('test')
             result
                 .align('center')
                 .image(img, 64, 56, 'atkinson')
