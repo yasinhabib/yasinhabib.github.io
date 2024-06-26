@@ -6,34 +6,39 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
+    background-color: #1C1C20;
+}
+
+h1, h2, h3, h4, h5, p, label, a {
+    color: #B5B5B8;
 }
 
 @media only screen and (max-width: 576px){
     main {
-        width: 100%
+        max-width: 100%
     }
 }
 
 @media only screen and (min-width: 577px) and (max-width: 768px){
     main {
-        width: 720px
+        max-width: 720px
     }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px){
     main {
-        width: 960px
+        max-width: 960px
     }
 }
 
 @media only screen and (min-width: 993px) and (max-width: 1200px){
     main {
-        width: 1140px
+        max-width: 1140px
     }
 }
 
 @media only screen and (min-width: 1201px){
     main {
-        width: 1320px
+        max-width: 1320px
     }
 }

@@ -1,22 +1,7 @@
 import { PageProps, graphql, useStaticQuery } from "gatsby"
 import * as React from "react"
-
-const ContainerStyle : React.CSSProperties = {
-    padding: '50px 0px',
-}
-
-const ProjectListContainerStyle : React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '2rem'
-}
-
-const ProjectContainerStyle : React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1rem',
-    width: '50%',
-}
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const Project = () => {
     const data = useStaticQuery(
@@ -37,14 +22,17 @@ const Project = () => {
             }
         `
       );
-
+    console.log(data)
     return(
-        <div style={ContainerStyle}>
-            <h1 style={{textAlign: 'center', margin: 0}}>Project </h1>
-            <div style={ProjectListContainerStyle}>
+        <div className={'project-container'}>
+            <h1>Project </h1>
+            <div className={'project-list-container'}>
                 {
                     data.allContentfulProjects.nodes.map((value: any) => (
-                        <div key={value.id} style={ProjectContainerStyle}>
+                        <div key={value.id} className={'project-item-container'}>
+                            <div className="project-image-container">
+                                <img src={value.projectPreview[0].url} className="project-image" />
+                            </div>
                             <h3 style={{margin: 0}}>{value.projectName}</h3>
                             <p style={{margin: 0}}>{value.projectDescription.projectDescription}</p>
                         </div>

@@ -1,50 +1,6 @@
 import { PageProps, graphql, useStaticQuery } from "gatsby"
 import * as React from "react"
 
-const ProfileContainerStyle : React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'row',
-}
-
-const ProfileContentContainerStyle : React.CSSProperties = {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'start',
-    justifyContent: 'center',
-    gap: '1rem'
-}
-
-const ProfilePictureContainerStyle : React.CSSProperties = {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'start',
-}
-
-const ProfilePictureStyle = {
-    width: '50%'
-}
-
-const SocialMediaContainer : React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'row',
-    gap: '1rem'
-}
-
-const SocialMediaLink : React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    textDecoration: 'none'
-}
-
-const SocialMediaIcon : React.CSSProperties = {
-    width: '20px',
-    backgroundColor: 'black'
-}
-
 const Profile = () => {
     const data = useStaticQuery(
         graphql`
@@ -77,22 +33,22 @@ const Profile = () => {
         `
       );
     return(
-        <div style={ProfileContainerStyle}>
-            <div style={ProfileContentContainerStyle}>
-                <h1 style={{margin: 0}}>{data.contentfulMyInfo.fullName}</h1>
-                <h2 style={{margin: 0}}>{data.contentfulMyInfo.title}</h2>
-                <p style={{margin: 0,fontSize: '20px'}}>{data.contentfulMyInfo.selfDescription.selfDescription}</p>
-                <div style={SocialMediaContainer}>
+        <div className={'profile-container'}>
+            <div className={'profile-content-container'}>
+                <h1>{data.contentfulMyInfo.fullName}</h1>
+                <h2>{data.contentfulMyInfo.title}</h2>
+                <p>{data.contentfulMyInfo.selfDescription.selfDescription}</p>
+                <div className={'social-media-container'}>
                     {data.allContentfulSocialMedia.edges.map((value: any) => (
-                        <a key={value.node.id} href={value.node.socialMediaUrl} style={SocialMediaLink} target="_blank">
-                            <img src={value.node.socialMediaIcon.url} style={SocialMediaIcon}/>
+                        <a key={value.node.id} href={value.node.socialMediaUrl} className={'social-media-link'} target="_blank">
+                            <img src={value.node.socialMediaIcon.url} className={'social-media-icon'}/>
                             <span>{value.node.socialMediaName}</span>
                         </a>    
                     ))}
                 </div>
             </div>
-            <div style={ProfilePictureContainerStyle}>
-                <img style={ProfilePictureStyle} src={data.contentfulMyInfo.profilePicture.url} alt="Profile Picture" />
+            <div className={'profile-picture-container'}>
+                <img className={'profile-picture'} src={data.contentfulMyInfo.profilePicture.url} alt="Profile Picture" />
             </div>
         </div>
     )
