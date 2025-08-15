@@ -39,7 +39,7 @@ const Employment = () => {
                                 <h5 style={{margin: 0}}>{value.node.company}</h5>
                                 <h5 style={{margin: 0}}>{`${value.node.startYear}-${value.node.present ? 'Present' : value.node.endYear}`}</h5>
                             </div>
-                            <p style={{margin: 0}}>{value.node.description.description}</p>
+                            <p style={{margin: 0, whiteSpace: 'pre-wrap'}}>{value.node.description.description}</p>
                         </div>
                     ))
                 }

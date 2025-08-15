@@ -31,7 +31,7 @@ const Project = () => {
                                 <img src={value.projectPreview[0].url} className="project-image" />
                             </div>
                             <h3 style={{margin: 0}}>{value.projectName}</h3>
-                            <p style={{margin: 0}}>{value.projectDescription.projectDescription}</p>
+                            <p style={{margin: 0, whiteSpace: 'pre-wrap'}}>{value.projectDescription.projectDescription}</p>
                         </div>
                     ))
                 }
