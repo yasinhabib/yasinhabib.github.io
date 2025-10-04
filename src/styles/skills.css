@@ -1,20 +1,59 @@
-.skill{
-    padding: 50px 10px;
+.about-container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 2rem;
+    text-align: center;
 }
 
-.skill-container{
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: #ffffff;
+}
+
+.about-description {
+    font-size: 1.2rem;
+    color: #b5b5b8;
+    margin: 0 0 3rem 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skill-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: start;
-    padding: 50px 0px;
-    gap: 1rem
+    justify-content: center;
+    gap: 1rem;
 }
 
-.skill-content{
-    margin: 0;
-    font-size: 20px;
-    padding: 10px 16px;
-    border: 1px solid #B5B5B8
+.skill-tag {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #64ffda;
+    border-radius: 20px;
+    color: #64ffda;
+    background: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: #64ffda;
+    color: #0a0a0a;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 0 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .about-description {
+        font-size: 1rem;
+    }
 }

@@ -28,22 +28,20 @@ const Employment = () => {
       );
 
     return(
-        <div className={'employment-container'}>
-            <h1 style={{margin: 0}}>Employment History</h1>
-            <div className={'employment-history-list-container'}>
+        <div className={'experience-container'}>
+            <h1 className={'section-title'}>Experience</h1>
+            <div className={'experience-timeline'}>
                 {
                     data.allContentfulEmploymentHistory.edges.map((value: any) => (
-                        <div key={value.node.id} className={'employment-history-container'}>
-                            <div className={'employment-history-title'}>
-                                <h3 style={{margin: 0}}>{value.node.title}</h3>
-                                <h5 style={{margin: 0}}>{value.node.company}</h5>
-                                <h5 style={{margin: 0}}>{`${value.node.startYear}-${value.node.present ? 'Present' : value.node.endYear}`}</h5>
+                        <div key={value.node.id} className={'experience-item'}>
+                            <div className={'experience-content'}>
+                                <h3 className={'experience-title'}>{value.node.title} <span className={'experience-company'}>@ {value.node.company}</span></h3>
+                                <p className={'experience-date'}>{`${value.node.startYear} - ${value.node.present ? 'Present' : value.node.endYear}`}</p>
+                                <p className={'experience-description'}>{value.node.description.description}</p>
                             </div>
-                            <p style={{margin: 0, whiteSpace: 'pre-wrap'}}>{value.node.description.description}</p>
                         </div>
                     ))
                 }
-                
             </div>
         </div>
     )

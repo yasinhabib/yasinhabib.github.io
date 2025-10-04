@@ -21,21 +21,22 @@ const Project = () => {
         `
       );
     return(
-        <div className={'project-container'}>
-            <h1>Project </h1>
-            <div className={'project-list-container'}>
+        <div className={'projects-container'}>
+            <h1 className={'section-title'}>Projects</h1>
+            <div className={'projects-grid'}>
                 {
                     data.allContentfulProjects.nodes.map((value: any) => (
-                        <div key={value.id} className={'project-item-container'}>
+                        <div key={value.id} className={'project-card'}>
                             <div className="project-image-container">
-                                <img src={value.projectPreview[0].url} className="project-image" />
+                                <img src={value.projectPreview[0].url} className="project-image" alt={value.projectName} />
                             </div>
-                            <h3 style={{margin: 0}}>{value.projectName}</h3>
-                            <p style={{margin: 0, whiteSpace: 'pre-wrap'}}>{value.projectDescription.projectDescription}</p>
+                            <div className="project-content">
+                                <h3 className="project-title">{value.projectName}</h3>
+                                <p className="project-description">{value.projectDescription.projectDescription}</p>
+                            </div>
                         </div>
                     ))
                 }
-                
             </div>
         </div>
     )

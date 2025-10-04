@@ -1,65 +1,108 @@
-@media only screen and (max-width: 576px){
-    .profile-container{
-        display: flex;
-        flex-direction: column-reverse;
-        padding: 0px 1rem;
-        gap: 1rem;
-        height: 100vh;
-    }
-}
-
-@media only screen and (min-width: 577px){
-    .profile-container{
-        display: flex;
-        flex-direction: row;
-        padding: 0px 1rem;
-    }
-}
-
-.profile-content-container{
-    flex: 2;
+.hero-container {
     display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    gap: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+    gap: 2rem;
 }
 
-.profile-content-container > h1, .profile-content-container > h2, .profile-content-container > p{
-    margin: 0;
-}
-
-.profile-container > p{
-    font-size: 20px
-}
-
-.profile-picture-container{
+.hero-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: start;
-}
-
-.profile-picture{
-    width: 50%
-}
-
-.social-media-container{
-    display: flex;
-    flex-direction: row;
     gap: 1rem;
 }
 
-.social-media-link{
+.hero-name {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+    color: #64ffda;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    color: #ffffff;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #b5b5b8;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.social-media-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-media-link {
     display: flex;
     flex-direction: row;
     align-items: center;
     text-decoration: none;
+    color: #b5b5b8;
+    transition: color 0.3s ease;
 }
 
-.social-media-icon{
-    width: 20px;
-    background-color: black;
-    margin-right: 10px
+.social-media-link:hover {
+    color: #64ffda;
+}
+
+.social-media-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+
+    .hero-name {
+        font-size: 2.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+    }
+
+    .social-media-container {
+        justify-content: center;
+    }
 }

@@ -20,13 +20,13 @@ const Skill = () => {
       );
 
     return(
-        <div className={'skill'}>
-            <h1 style={{margin: 0}}>Expertise In</h1>
+        <div className={'about-container'}>
+            <h1 className={'section-title'}>About</h1>
+            <p className={'about-description'}>Here are some technologies I've been working with recently:</p>
             <div className={'skill-container'}>
                 {
-                    data.allContentfulSkill.edges.map((value: any) => <p key={value.node.id} className={'skill-content'}>{value.node.skillName}</p>)
+                    data.allContentfulSkill.edges.map((value: any) => <span key={value.node.id} className={'skill-tag'}>{value.node.skillName}</span>)
                 }
-                
             </div>
         </div>
     )

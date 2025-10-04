@@ -11,19 +11,21 @@ import Skill from "./components/skills"
 import Employment from "./components/employment"
 import Project from "./components/project"
 
-const pageStyles = {
-  color: "#232129",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-  padding: '50px 0'
-}
-
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <Profile />
-      <Skill />
-      <Employment />
-      <Project />
+    <main>
+      <section id="hero">
+        <Profile />
+      </section>
+      <section id="about">
+        <Skill />
+      </section>
+      <section id="experience">
+        <Employment />
+      </section>
+      <section id="projects">
+        <Project />
+      </section>
     </main>
   )
 }

@@ -33,21 +33,21 @@ const Profile = () => {
         `
       );
     return(
-        <div className={'profile-container'}>
-            <div className={'profile-content-container'}>
-                <h1>{data.contentfulMyInfo.fullName}</h1>
-                <h2>{data.contentfulMyInfo.title}</h2>
-                <p>{data.contentfulMyInfo.selfDescription.selfDescription}</p>
+        <div className={'hero-container'}>
+            <div className={'hero-content'}>
+                <h1 className={'hero-name'}>{data.contentfulMyInfo.shortName || data.contentfulMyInfo.fullName}</h1>
+                <h2 className={'hero-title'}>{data.contentfulMyInfo.title}</h2>
+                <p className={'hero-description'}>{data.contentfulMyInfo.selfDescription.selfDescription}</p>
                 <div className={'social-media-container'}>
                     {data.allContentfulSocialMedia.edges.map((value: any) => (
                         <a key={value.node.id} href={value.node.socialMediaUrl} className={'social-media-link'} target="_blank">
-                            <img src={value.node.socialMediaIcon.url} className={'social-media-icon'}/>
+                            <img src={value.node.socialMediaIcon.url} className={'social-media-icon'} alt={value.node.socialMediaName}/>
                             <span>{value.node.socialMediaName}</span>
-                        </a>    
+                        </a>
                     ))}
                 </div>
             </div>
-            <div className={'profile-picture-container'}>
+            <div className={'hero-image'}>
                 <img className={'profile-picture'} src={data.contentfulMyInfo.profilePicture.url} alt="Profile Picture" />
             </div>
         </div>
